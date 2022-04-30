@@ -53,3 +53,10 @@ class Snake:
     def down(self):
         if self.head.heading() != UP:
             self.head.setheading(DOWN)
+
+    def reset(self):
+        for segment in self.parts:
+            segment.hideturtle()
+        self.parts.clear()
+        self.create_snake()
+        self.head = self.parts[0]
